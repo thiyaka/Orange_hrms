@@ -12,8 +12,8 @@ public class TCC_001_LOGIN_01 extends BaseTest {
 		
 		LoginPage lp= new LoginPage(driver);
 		
-		lp.setUsername("Admin");
-		lp.setPassword("admin123");
+		lp.setUsername(p.getProperty("username"));
+		lp.setPassword(p.getProperty("password"));
 		lp.clickLogin();
 		
 	}

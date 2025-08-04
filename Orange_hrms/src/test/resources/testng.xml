@@ -2,7 +2,8 @@
 <suite name="Suite" verbose="8">
 
 	<test thread-count="5" name="Test">
-
+		<parameter name="os" value="windows" />
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="tests.TCC_001_LOGIN_01" />
 		</classes>
