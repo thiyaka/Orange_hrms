@@ -6,11 +6,18 @@
 	<artifactId>ThiyakaFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Orange hrms</name>
-	<description>This is Selenium with Java Hybrid Automation framework for Orange hrms site.</description>
+	<description>This is Selenium with Java Hybrid Automation framework for
+		Orange hrms site.</description>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+	</properties>
 	<dependencies>
 
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -40,7 +47,8 @@
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
 
 		<dependency>
@@ -49,20 +57,21 @@
 			<version>2.22.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>2.22.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>2.22.0</version>
 		</dependency>
-
 
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
@@ -71,7 +80,6 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.1</version>
 		</dependency>
-
 
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->

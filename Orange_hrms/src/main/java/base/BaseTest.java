@@ -19,7 +19,7 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-		driver.get("");
+		driver.get("https://opensource-demo.orangehrmlive.com/");
 		driver.manage().window().maximize();
 		
 	}
@@ -27,7 +27,7 @@ public class BaseTest {
 	@AfterClass
 	public void teardown() {
 		
-		driver.close();	
+		//driver.close();	
 	}
 	
 	
