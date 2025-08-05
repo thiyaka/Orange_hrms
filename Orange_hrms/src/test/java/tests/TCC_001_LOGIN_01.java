@@ -3,7 +3,7 @@ package tests;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import pages.DashboardPage;
+import pages.HomePage;
 import pages.LoginPage;
 
 public class TCC_001_LOGIN_01 extends BaseTest {
@@ -16,9 +16,10 @@ public class TCC_001_LOGIN_01 extends BaseTest {
 		lp.setUsername(p.getProperty("username"));
 		lp.setPassword(p.getProperty("password"));
 		lp.clickLogin();
-		DashboardPage dp= new DashboardPage(driver);
-		dp.clickUser();
-		dp.clickLogout();
+		HomePage hp= new HomePage(driver);
+		hp.clickUser();
+		hp.clickLogout();
+		//hp.clickMyinfo();
 		
 	}
 }

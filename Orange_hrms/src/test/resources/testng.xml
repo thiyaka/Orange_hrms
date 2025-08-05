@@ -5,7 +5,15 @@
 		<parameter name="os" value="windows" />
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="tests.TCC_001_LOGIN_01" />
+			<!-- <class name="tests.TCC_001_LOGIN_01" />-->
+			<class name="tests.TCC_003_Myinfo_01" />
 		</classes>
 	</test>
 </suite> 
+
+<!--
+TCC_001_LOGIN_01 
+TCC_002_LOGIN_DDT_02
+TCC_003_Myinfo_01 
+
+-->
