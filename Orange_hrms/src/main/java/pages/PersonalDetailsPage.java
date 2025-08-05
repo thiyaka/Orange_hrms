@@ -13,9 +13,37 @@ public class PersonalDetailsPage extends BasePage {
 	@FindBy(xpath="//h6[contains(normalize-space(.), 'Personal')]")
 	WebElement txtPersonalTitle;
 	
+	@FindBy(xpath="//*[@placeholder=\"First Name\"]")
+	WebElement txtFirstName;
+	
+	@FindBy(name="//*[@placeholder=\"Middle Name\"]")
+	WebElement txtMiddleName;
+	
+	@FindBy(name="//*[@placeholder=\"Last Name\"]")
+	WebElement txtLastName;
+	
 	public String readTitle() {
 		String PageTitle= txtPersonalTitle.getText();
 		return PageTitle;
 	}
+	
+	public void setFirstName(String firstname) {
+		txtFirstName.clear();
+		txtFirstName.sendKeys(firstname);
+	}
+	
+	public void setMiddleName(String middlename) {
+		txtMiddleName.clear();
+		txtMiddleName.sendKeys(middlename);
+	}
+	
+	public void setLastName(String lastname) {
+		txtLastName.clear();
+		txtLastName.sendKeys(lastname);
+	}
+	
+	
+	
+	
 }
 

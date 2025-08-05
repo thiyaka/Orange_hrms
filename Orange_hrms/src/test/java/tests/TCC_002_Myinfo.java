@@ -7,7 +7,9 @@ import dataProviders.Login_Dataprovider;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class TCC_002_LOGIN_DDT_02 extends BaseTest {
+public class TCC_002_Myinfo extends BaseTest {
+	
+	// Verify login with DataDriven approach
 	
 	@Test(dataProvider = "LoginData", dataProviderClass = Login_Dataprovider.class)
 	public void verifyLogin_DDT(String uname, String psw) {

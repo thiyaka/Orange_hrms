@@ -9,7 +9,10 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.PersonalDetailsPage;
 
-public class TCC_003_Myinfo_01 extends BaseTest {
+public class TCC_003_Myinfo extends BaseTest {
+	
+	// Verify ESS user is able to view Personal Details
+
 	
 	@Test
 	public void verifyPersonalDetails() {

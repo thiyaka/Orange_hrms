@@ -6,8 +6,10 @@ import base.BaseTest;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class TCC_001_LOGIN_01 extends BaseTest {
+public class TCC_001_Myinfo extends BaseTest {
 
+	// Verify login with valid ESS username and valid password
+	
 	@Test
 	public void verfiyLogin() {
 		
