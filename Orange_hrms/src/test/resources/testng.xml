@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" verbose="8">
+	<listeners>
+		<listener class-name="utilities.ExtentReportManager" />
+	</listeners>
 
 	<test thread-count="5" name="Test">
 		<parameter name="os" value="windows" />
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<!-- <class name="tests.TCC_001_LOGIN_01" />-->
-			<class name="tests.TCC_003_Myinfo_01" />
+			<class name="tests.TCC_004_Myinfo" />
 		</classes>
 	</test>
-</suite> 
+</suite>
 
 <!--
-TCC_001_LOGIN_01 
-TCC_002_LOGIN_DDT_02
-TCC_003_Myinfo_01 
+TCC_001_Myinfo 
+TCC_002_Myinfo
+TCC_003_Myinfo
+TCC_004_Myinfo
 
 -->
