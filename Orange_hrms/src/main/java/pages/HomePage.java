@@ -19,6 +19,9 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//*[@class='oxd-sidepanel-body']//ul//li//span[text()='My Info']")
 	WebElement btnMyinfo;
 	
+	@FindBy(xpath="//h6[text()='Dashboard']")
+	WebElement msgHeading;
+	
 	public void clickUser() {
 		dropdownuser.click();
 	}
@@ -29,6 +32,17 @@ public class HomePage extends BasePage {
 	
 	public void clickMyinfo() {
 		btnMyinfo.click();
+	}
+	
+	public boolean isMyAccountPageExists() {
+		
+		try {
+			return (msgHeading.isDisplayed());
+			}
+			catch(Exception e){
+				return false;
+			}
+		
 	}
 
 }
