@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -13,15 +14,28 @@ public class TCC_001_Myinfo extends BaseTest {
 	@Test
 	public void verfiyLogin() {
 		
+		logger.info("*** Starting TCC_001_Myinfo ***");
+
+		try {
 		LoginPage lp= new LoginPage(driver);
+		logger.info("Inside LoginPage");
 		
 		lp.setUsername(p.getProperty("username"));
 		lp.setPassword(p.getProperty("password"));
 		lp.clickLogin();
+		
 		HomePage hp= new HomePage(driver);
+		logger.info("Inside HomePage");
+		
 		hp.clickUser();
 		hp.clickLogout();
-		//hp.clickMyinfo();
+		}catch(Exception e) {
+			Assert.fail();
+		}
+	
+		finally{
+		logger.info("*** Finished TCC_001_Myinfo ***");
+		}
 		
 	}
 }

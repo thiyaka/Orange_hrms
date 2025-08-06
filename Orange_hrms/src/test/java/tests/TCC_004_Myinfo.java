@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -9,28 +10,38 @@ import pages.PersonalDetailsPage;
 
 public class TCC_004_Myinfo extends BaseTest {
 
-	//Verify ESS user can edit Personal Details
+	// Verify ESS user can edit Personal Details
 
-	
 	@Test
 	public void verifyPersonalDetails_update() {
 
-		LoginPage lp = new LoginPage(driver);
+		logger.info("*** Starting TCC_004_Myinfo ***");
 
-		lp.setUsername(p.getProperty("username"));
-		lp.setPassword(p.getProperty("password"));
-		lp.clickLogin();
+		try {
+			LoginPage lp = new LoginPage(driver);
+			logger.info("Inside LoginPage");
 
-		HomePage hp = new HomePage(driver);
+			lp.setUsername(p.getProperty("username"));
+			lp.setPassword(p.getProperty("password"));
+			lp.clickLogin();
 
-		hp.clickMyinfo();
+			HomePage hp = new HomePage(driver);
+			logger.info("Inside HomePage");
 
-		PersonalDetailsPage personalDetails = new PersonalDetailsPage(driver);
-		
-		personalDetails.setFirstName("Walter");
-		personalDetails.setMiddleName("Harveld");
-		personalDetails.setLastName("White");
-		
+			hp.clickMyinfo();
+
+			PersonalDetailsPage personalDetails = new PersonalDetailsPage(driver);
+			logger.info("Inside PersonalDetailsPage");
+
+			personalDetails.setFirstName("Walter");
+			personalDetails.setMiddleName("Harveld");
+			personalDetails.setLastName("White");
+		} catch (Exception e) {
+			Assert.fail();
+		} finally {
+			logger.info("*** Finished TCC_004_Myinfo ***");
+		}
+
 	}
 
 }

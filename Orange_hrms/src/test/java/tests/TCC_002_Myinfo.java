@@ -15,14 +15,18 @@ public class TCC_002_Myinfo extends BaseTest {
 	@Test(dataProvider = "LoginData", dataProviderClass = Login_Dataprovider.class)
 	public void verifyLogin_DDT(String uname, String psw, String res) {
 
+		logger.info("*** Starting TCC_002_Myinfo ***");
+
 		try {
 			LoginPage lp = new LoginPage(driver);
+			logger.info("Inside LoginPage");
 
 			lp.setUsername(uname);
 			lp.setPassword(psw);
 			lp.clickLogin();
 
 			HomePage dp = new HomePage(driver);
+			logger.info("Inside HomePage");
 
 			boolean targetpage = dp.isMyAccountPageExists();
 
@@ -48,6 +52,10 @@ public class TCC_002_Myinfo extends BaseTest {
 
 		} catch (Exception e) {
 			Assert.fail("An exception occurred: " + e.getMessage());
+		}
+
+		finally {
+			logger.info("*** Finished TCC_002_Myinfo ***");
 		}
 	}
 }

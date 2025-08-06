@@ -18,17 +18,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-
+import org.apache.logging.log4j.LogManager;//log4j
+import org.apache.logging.log4j.Logger;
 
 public class BaseTest {
 
 	public static WebDriver driver;
 	public Properties p;
+	public Logger logger;
 
 	@BeforeClass
 	@Parameters({ "os", "browser" })
 	public void setup(String os, String br) {
 
+		logger= LogManager.getLogger(this.getClass());
 		try {
 			FileReader file = new FileReader("./src/test/resources/config.properties");
 
@@ -68,7 +71,7 @@ public class BaseTest {
 	@AfterClass
 	public void teardown() {
 
-		// driver.close();
+		 driver.close();
 
 	}
 	
