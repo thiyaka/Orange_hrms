@@ -5,44 +5,50 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-	
+
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(xpath="//*[@class=\"oxd-userdropdown-tab\"]")
+
+	@FindBy(xpath = "//*[@class=\"oxd-userdropdown-tab\"]")
 	WebElement dropdownuser;
-	
-	@FindBy(xpath="//*[@class=\"oxd-dropdown-menu\"]/li[4]")
+
+	@FindBy(xpath = "//*[@class=\"oxd-dropdown-menu\"]/li[4]")
 	WebElement btnLogout;
-	
-	@FindBy(xpath="//*[@class='oxd-sidepanel-body']//ul//li//span[text()='My Info']")
+
+	@FindBy(xpath = "//*[@class='oxd-sidepanel-body']//ul//li//span[text()='My Info']")
 	WebElement btnMyinfo;
-	
-	@FindBy(xpath="//h6[text()='Dashboard']")
+
+	@FindBy(xpath = "//h6[text()='Dashboard']")
 	WebElement msgHeading;
-	
+
+	@FindBy(xpath = "//*[@class='oxd-sidepanel-body']//ul//li//span[text()='Admin']")
+	WebElement btnAdmin;
+
 	public void clickUser() {
 		dropdownuser.click();
 	}
-	
+
 	public void clickLogout() {
 		btnLogout.click();
 	}
-	
+
 	public void clickMyinfo() {
 		btnMyinfo.click();
 	}
-	
+
 	public boolean isMyAccountPageExists() {
-		
+
 		try {
 			return (msgHeading.isDisplayed());
-			}
-			catch(Exception e){
-				return false;
-			}
-		
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+	
+	public void clickAdmin() {
+		btnAdmin.click();
 	}
 
 }

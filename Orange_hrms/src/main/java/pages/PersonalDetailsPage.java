@@ -13,13 +13,13 @@ public class PersonalDetailsPage extends BasePage {
 	@FindBy(xpath="//h6[contains(normalize-space(.), 'Personal')]")
 	WebElement txtPersonalTitle;
 	
-	@FindBy(xpath="//*[@placeholder=\"First Name\"]")
+	@FindBy(name="firstName")
 	WebElement txtFirstName;
 	
-	@FindBy(name="//*[@placeholder=\"Middle Name\"]")
+	@FindBy(name="middleName")
 	WebElement txtMiddleName;
 	
-	@FindBy(name="//*[@placeholder=\"Last Name\"]")
+	@FindBy(name="lastName")
 	WebElement txtLastName;
 	
 	public String readTitle() {
