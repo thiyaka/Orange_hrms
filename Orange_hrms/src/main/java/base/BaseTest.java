@@ -47,7 +47,6 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		
-	
 
 		if (p.getProperty("execution_env").equalsIgnoreCase("local")) {
 			switch (br.toLowerCase()) {

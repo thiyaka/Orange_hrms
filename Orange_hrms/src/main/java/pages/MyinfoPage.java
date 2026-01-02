@@ -11,9 +11,19 @@ public class MyinfoPage extends BasePage {
 	}
 	
 	@FindBy(xpath="//a[contains(text(),'Personal Details')]")
-	WebElement btnPersonaldetails;
+	WebElement btnPersonalDetails;
+	
+	@FindBy(xpath="//a[normalize-space()='Contact Details']")
+	WebElement btnContactDetails;
 	
 	public void clickPersonalDetails() {
-		btnPersonaldetails.click();
+		btnPersonalDetails.click();
 	}
+	
+	public void clickContactDetails() {
+		btnContactDetails.click();
+		
+	}
+	
+	
 }

@@ -9,7 +9,7 @@
 		<parameter name="browser" value="chrome" />
 		<classes>>
 			<!-- <class name="tests.TCC_001_LOGIN_01" />-->
-			<class name="tests.TCC_001_Myinfo" />
+			<class name="tests.TCC_005_Myinfo" />
 		</classes>
 	</test>
 </suite>
