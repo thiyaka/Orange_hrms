@@ -31,8 +31,8 @@ public class ExtentReportManager implements ITestListener {
 
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
 		repName = "Test-Report-" + timeStamp + ".html";
-		sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);// specify location of the report
-
+		sparkReporter = new ExtentSparkReporter(".\\src\\test\\resources\\reports\\" + repName);// specify location of the report
+		
 		sparkReporter.config().setDocumentTitle("OrangeHrms Automation Report"); // Title of report
 		sparkReporter.config().setReportName("OrangeHrms Functional Testing"); // name of the report
 		sparkReporter.config().setTheme(Theme.DARK);

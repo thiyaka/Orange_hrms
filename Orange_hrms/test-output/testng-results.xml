@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-02T18:57:09 IST" name="Suite" finished-at="2026-01-02T18:57:32 IST" duration-ms="23216">
+  <suite started-at="2026-01-02T19:13:23 IST" name="Suite" finished-at="2026-01-02T19:13:40 IST" duration-ms="17184">
     <groups>
     </groups>
-    <test started-at="2026-01-02T18:57:09 IST" name="Test" finished-at="2026-01-02T18:57:32 IST" duration-ms="23216">
+    <test started-at="2026-01-02T19:13:23 IST" name="Test" finished-at="2026-01-02T19:13:40 IST" duration-ms="17184">
       <class name="tests.TCC_001_Myinfo">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T18:57:09 IST" name="setup" finished-at="2026-01-02T18:57:21 IST" duration-ms="11812" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T19:13:24 IST" name="setup" finished-at="2026-01-02T19:13:33 IST" duration-ms="9354" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verfiyLogin()[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T18:57:21 IST" name="verfiyLogin" finished-at="2026-01-02T18:57:29 IST" duration-ms="8256" status="PASS">
+        <test-method signature="verfiyLogin()[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T19:13:33 IST" name="verfiyLogin" finished-at="2026-01-02T19:13:40 IST" duration-ms="6842" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verfiyLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T18:57:29 IST" name="teardown" finished-at="2026-01-02T18:57:32 IST" duration-ms="2427" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.TCC_001_Myinfo@1ce24091]" started-at="2026-01-02T19:13:40 IST" name="teardown" finished-at="2026-01-02T19:13:40 IST" duration-ms="440" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
