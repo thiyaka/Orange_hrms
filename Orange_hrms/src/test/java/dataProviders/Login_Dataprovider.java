@@ -11,7 +11,8 @@ public class Login_Dataprovider {
 	@DataProvider(name="LoginData")
 	public String [][] getdata() throws IOException{
 		
-		String path=".\\testData\\Orangehrms_LoginData.xlsx";
+		String path="./src/test/resources/testData/Orangehrms_LoginData.xlsx";
+		///Orange_hrms/src/test/resources/testData/Orangehrms_LoginData.xlsx
 		
 		ExcelUtility xlutil= new ExcelUtility(path);
 		

@@ -7,9 +7,9 @@
 	<test thread-count="5" name="Test">
 		<parameter name="os" value="windows" />
 		<parameter name="browser" value="chrome" />
-		<classes>
+		<classes>>
 			<!-- <class name="tests.TCC_001_LOGIN_01" />-->
-			<class name="tests.TCC_001_Admin" />
+			<class name="tests.TCC_001_Myinfo" />
 		</classes>
 	</test>
 </suite>
@@ -22,5 +22,6 @@ TCC_004_Myinfo
 kn
 AdminModule
 TCC_001_Admin
+tests.TCC_002_Myinfo
 
 -->

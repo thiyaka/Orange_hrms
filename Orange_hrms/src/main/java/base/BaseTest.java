@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
+import java.util.logging.*;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -33,7 +34,7 @@ public class BaseTest {
 
 		logger= LogManager.getLogger(this.getClass());
 		try {
-			FileReader file = new FileReader("./src/test/resources/config.properties");
+			FileReader file = new FileReader("./src/main/resources/config/config.properties");
 
 			p = new Properties();
 			p.load(file);
@@ -45,6 +46,8 @@ public class BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	
 
 		if (p.getProperty("execution_env").equalsIgnoreCase("local")) {
 			switch (br.toLowerCase()) {
@@ -71,7 +74,7 @@ public class BaseTest {
 	@AfterClass
 	public void teardown() {
 
-		// driver.close();
+		driver.close();
 
 	}
 	
