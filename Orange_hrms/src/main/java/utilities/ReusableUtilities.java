@@ -53,5 +53,11 @@ public class ReusableUtilities {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 		return wait.until(ExpectedConditions.visibilityOf(toast)).isDisplayed();
 	}
+	
+	public static Boolean waitForFormToLoad(WebDriver driver, WebElement formLoader) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    return wait.until(ExpectedConditions.invisibilityOf(formLoader));
+	}
+
 
 }

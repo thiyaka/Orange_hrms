@@ -15,7 +15,7 @@ public class TCC_005_Myinfo extends BaseTest {
 	public void verify_MobileNumber_Update() {
 		logger.info("*** Starting TCC_005_Myinfo_ verify_MobileNumber_Update ***");
 
-		try {
+		//try {
 			LoginPage lp = new LoginPage(driver);
 			logger.info("Inside LoginPage");
 			lp.setUsername(p.getProperty("username"));
@@ -35,35 +35,38 @@ public class TCC_005_Myinfo extends BaseTest {
 			ContactDetailsPage contactDetails = new ContactDetailsPage(driver);
 			logger.info("updating ContactDetails");
 
-			contactDetails.setStreet1("Vivekanandar theru");
+			contactDetails.setStreet1(p.getProperty("Street1"));
 
-			contactDetails.setStreet2("Dubai Main Road");
+			contactDetails.setStreet2(p.getProperty("Street2"));
 
-			contactDetails.setCity("Madurai");
+			contactDetails.setCity(p.getProperty("City"));
 
-			contactDetails.setState("Tamil Nadu");
+			contactDetails.setState(p.getProperty("State"));
 
-			contactDetails.setZipCode("625001");
+			contactDetails.setZipCode(p.getProperty("ZipCode"));
 
-			contactDetails.setHomeNumber("0001000299");
+			contactDetails.setHomeNumber(p.getProperty("HomeNumber"));
 
-			contactDetails.setMobileNumber("+91 998474847");
+			contactDetails.setMobileNumber(p.getProperty("MobileNumber"));
 
-			contactDetails.setWorkNumber("112-002-999");
+			contactDetails.setWorkNumber(p.getProperty("WorkNumber"));
 
-			contactDetails.setWorkEmail("GBU@osohrm.com");
+			contactDetails.setWorkEmail(p.getProperty("WorkEmail"));
 
+			/*
+			 * Street1=KK Nagar Street2=Mattuthavani City=Madurai State=Tamil Nadu
+			 * ZipCode=625705 HomeNumber=4549293698 MobileNumber=+91 7094513788
+			 * WorkNumber=101-201-1998 =hness@osohrm.com
+			 */
 			contactDetails.clickSave();
 
 			Assert.assertTrue(contactDetails.isSuccessMessageDisplayed(),
 					"Success message not displayed after saving contact details");
 
-		} catch (Throwable t) {
-			logger.error("Test failed", t);
-			throw t; // VERY IMPORTANT
-		} finally {
-			logger.info("*** Finished TCC_005_Myinfo ***");
-		}
+			/*
+			 * } catch (Throwable t) { logger.error("Test failed", t); throw t; // VERY
+			 * IMPORTANT } finally { logger.info("*** Finished TCC_005_Myinfo ***"); }
+			 */
 
 	}
 }

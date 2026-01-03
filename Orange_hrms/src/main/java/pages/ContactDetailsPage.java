@@ -52,50 +52,63 @@ public class ContactDetailsPage extends BasePage {
 
 	@FindBy(xpath = "//p[contains(@class,'oxd-text--toast-message')]")
 	WebElement successMessageText;
+	
+	@FindBy(css = "div.oxd-form-loader")
+	private WebElement formLoader;
+
 
 	public void setStreet1(String streetName1) {
-
+		
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtStreet1, streetName1, 10);
 	}
 
 	public void setStreet2(String streetName2) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtStreet2, streetName2, 10);
 	}
 
 	public void setCity(String cityName) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtCity, cityName, 10);
 	}
 
 	public void setState(String stateName) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtState, stateName, 10);
 	}
 
 	public void setZipCode(String zipCode) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtZipCode, zipCode, 10);
 	}
 
 	public void setHomeNumber(String homeNumber) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtHomeNumber, homeNumber, 10);
 	}
 
 	public void setMobileNumber(String mobileNumber) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtMobileNumber, mobileNumber, 10);
 
 	}
 
 	public void setWorkNumber(String workNumber) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtWorkNumber, workNumber, 10);
 	}
 
 	public void setWorkEmail(String workEmail) {
 
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtWorkEmail, workEmail, 10);
 	}
 
