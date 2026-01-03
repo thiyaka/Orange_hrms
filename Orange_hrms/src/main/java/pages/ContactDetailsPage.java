@@ -55,7 +55,9 @@ public class ContactDetailsPage extends BasePage {
 	
 	@FindBy(css = "div.oxd-form-loader")
 	private WebElement formLoader;
-
+	
+	@FindBy(xpath="//label[text()='Country']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]")
+	WebElement countryDropdown;
 
 	public void setStreet1(String streetName1) {
 		
@@ -124,6 +126,14 @@ public class ContactDetailsPage extends BasePage {
 		ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
 
 		return successMessageText.getText().equalsIgnoreCase("Successfully Updated");
+	}
+	
+	public void selectCountry(String country) {
+		
+		ReusableUtilities.waitForFormToLoad(driver, formLoader);
+		ReusableUtilities.waitForElementToBeClickable(driver, countryDropdown, 10);
+		
+		ReusableUtilities.selectFromCustomDropdown(countryDropdown, country, driver);
 	}
 
 }

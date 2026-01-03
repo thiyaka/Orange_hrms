@@ -2,6 +2,7 @@ package utilities;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,5 +79,11 @@ public class ReusableUtilities {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait;
 	}
+	
+	public static void selectFromCustomDropdown(WebElement dropdown, String value, WebDriver driver) {
+	    dropdown.click();
+	    driver.findElement(By.xpath("//span[text()='" + value + "']")).click();
+	}
+
 
 }

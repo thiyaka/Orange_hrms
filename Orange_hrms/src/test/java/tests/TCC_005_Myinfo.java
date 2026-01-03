@@ -52,12 +52,9 @@ public class TCC_005_Myinfo extends BaseTest {
 			contactDetails.setWorkNumber(p.getProperty("WorkNumber"));
 
 			contactDetails.setWorkEmail(p.getProperty("WorkEmail"));
-
-			/*
-			 * Street1=KK Nagar Street2=Mattuthavani City=Madurai State=Tamil Nadu
-			 * ZipCode=625705 HomeNumber=4549293698 MobileNumber=+91 7094513788
-			 * WorkNumber=101-201-1998 =hness@osohrm.com
-			 */
+			
+			contactDetails.selectCountry(p.getProperty("country"));
+			
 			contactDetails.clickSave();
 
 			Assert.assertTrue(contactDetails.isSuccessMessageDisplayed(),
