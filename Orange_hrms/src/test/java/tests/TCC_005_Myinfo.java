@@ -32,18 +32,35 @@ public class TCC_005_Myinfo extends BaseTest {
 
 			mfPage.clickContactDetails();
 
-			ContactDetailsPage cDP = new ContactDetailsPage(driver);
-			logger.info("Inside ContactDetailsPage");
+			ContactDetailsPage contactDetails = new ContactDetailsPage(driver);
+			logger.info("updating ContactDetails");
 
-			cDP.setMobileNumber("+91 998474847");
+			contactDetails.setStreet1("Vivekanandar theru");
 
-			cDP.clickSave();
+			contactDetails.setStreet2("Dubai Main Road");
 
-			Assert.assertTrue(cDP.isSuccessMessageDisplayed(),
+			contactDetails.setCity("Madurai");
+
+			contactDetails.setState("Tamil Nadu");
+
+			contactDetails.setZipCode("625001");
+
+			contactDetails.setHomeNumber("0001000299");
+
+			contactDetails.setMobileNumber("+91 998474847");
+
+			contactDetails.setWorkNumber("112-002-999");
+
+			contactDetails.setWorkEmail("GBU@osohrm.com");
+
+			contactDetails.clickSave();
+
+			Assert.assertTrue(contactDetails.isSuccessMessageDisplayed(),
 					"Success message not displayed after saving contact details");
 
-		} catch (Exception e) {
-			Assert.fail();
+		} catch (Throwable t) {
+			logger.error("Test failed", t);
+			throw t; // VERY IMPORTANT
 		} finally {
 			logger.info("*** Finished TCC_005_Myinfo ***");
 		}

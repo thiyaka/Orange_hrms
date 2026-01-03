@@ -17,8 +17,32 @@ public class ContactDetailsPage extends BasePage {
 		super(driver);
 	}
 
+	@FindBy(xpath = "//label[text()='Street 1']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtStreet1;
+
+	@FindBy(xpath = "//label[text()='Street 2']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtStreet2;
+
+	@FindBy(xpath = "//label[text()='City']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtCity;
+
+	@FindBy(xpath = "//label[text()='State/Province']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtState;
+
+	@FindBy(xpath = "//label[text()='Zip/Postal Code']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtZipCode;
+
+	@FindBy(xpath = "//label[text()='Home']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtHomeNumber;
+
 	@FindBy(xpath = "//label[text()='Mobile']/ancestor::div[contains(@class,'oxd-input-group')]//input")
 	WebElement txtMobileNumber;
+
+	@FindBy(xpath = "//label[text()='Work']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtWorkNumber;
+
+	@FindBy(xpath = "//label[text()='Work Email']/ancestor::div[contains(@class,'oxd-input-group')]//input")
+	WebElement txtWorkEmail;
 
 	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement btnSave;
@@ -29,10 +53,50 @@ public class ContactDetailsPage extends BasePage {
 	@FindBy(xpath = "//p[contains(@class,'oxd-text--toast-message')]")
 	WebElement successMessageText;
 
-	public void setMobileNumber(String number) {
+	public void setStreet1(String streetName1) {
 
-		ReusableUtilities.clearAndType(driver, txtMobileNumber, number, 10);
+		ReusableUtilities.clearAndType(driver, txtStreet1, streetName1, 10);
+	}
 
+	public void setStreet2(String streetName2) {
+
+		ReusableUtilities.clearAndType(driver, txtStreet2, streetName2, 10);
+	}
+
+	public void setCity(String cityName) {
+
+		ReusableUtilities.clearAndType(driver, txtCity, cityName, 10);
+	}
+
+	public void setState(String stateName) {
+
+		ReusableUtilities.clearAndType(driver, txtState, stateName, 10);
+	}
+
+	public void setZipCode(String zipCode) {
+
+		ReusableUtilities.clearAndType(driver, txtZipCode, zipCode, 10);
+	}
+
+	public void setHomeNumber(String homeNumber) {
+
+		ReusableUtilities.clearAndType(driver, txtHomeNumber, homeNumber, 10);
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+
+		ReusableUtilities.clearAndType(driver, txtMobileNumber, mobileNumber, 10);
+
+	}
+
+	public void setWorkNumber(String workNumber) {
+
+		ReusableUtilities.clearAndType(driver, txtWorkNumber, workNumber, 10);
+	}
+
+	public void setWorkEmail(String workEmail) {
+
+		ReusableUtilities.clearAndType(driver, txtWorkEmail, workEmail, 10);
 	}
 
 	public void clickSave() {
