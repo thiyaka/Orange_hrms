@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class ContactDetailsPage extends BasePage {
 		super(driver);
 	}
 
+	// div[contains(@class,'orangehrm-action-header')]//button
 	@FindBy(xpath = "//label[text()='Street 1']/ancestor::div[contains(@class,'oxd-input-group')]//input")
 	WebElement txtStreet1;
 
@@ -53,14 +55,29 @@ public class ContactDetailsPage extends BasePage {
 	@FindBy(xpath = "//p[contains(@class,'oxd-text--toast-message')]")
 	WebElement successMessageText;
 	
+	@FindBy(xpath = "//div[contains(@class,'oxd-toast-content')]//p")
+	private List<WebElement> successMessages;
+
+
 	@FindBy(css = "div.oxd-form-loader")
 	private WebElement formLoader;
-	
-	@FindBy(xpath="//label[text()='Country']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]")
+
+	@FindBy(xpath = "//label[text()='Country']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]")
 	WebElement countryDropdown;
 
+	@FindBy(xpath = "//button[text()=' Add ']")
+	private WebElement addAttachmentBtn;
+
+	@FindBy(xpath = "//input[@type='file']")
+	private WebElement fileUploadInput;
+
+	@FindBy(xpath = "//button[text()=' Cancel ']/ancestor::div[@class='oxd-form-actions']//button[normalize-space()='Save']")
+	private WebElement saveAttachmentBtn;
+
+	private By fileUploadInputBy = By.xpath("//input[@type='file']");
+
 	public void setStreet1(String streetName1) {
-		
+
 		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.clearAndType(driver, txtStreet1, streetName1, 10);
 	}
@@ -128,12 +145,50 @@ public class ContactDetailsPage extends BasePage {
 		return successMessageText.getText().equalsIgnoreCase("Successfully Updated");
 	}
 	
+	public boolean isSuccessMessageDisplayed1() {
+
+		ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
+
+		return successMessageText.getText().equalsIgnoreCase("Successfully Saved");
+	}
+
 	public void selectCountry(String country) {
-		
+
 		ReusableUtilities.waitForFormToLoad(driver, formLoader);
 		ReusableUtilities.waitForElementToBeClickable(driver, countryDropdown, 10);
-		
+
 		ReusableUtilities.selectFromCustomDropdown(countryDropdown, country, driver);
 	}
+
+	public void uploadAttachment(String filePath) {
+
+		ReusableUtilities.waitForElementToBeClickable(driver, addAttachmentBtn, 10).click();
+
+		WebElement fileInput = ReusableUtilities.waitForElementPresence(driver, fileUploadInputBy, 10);
+
+		fileInput.sendKeys(filePath);
+
+		ReusableUtilities.waitForElementToBeClickable(driver, saveAttachmentBtn, 10).click();
+	}
+	
+	public boolean isSuccessMessagePresent(String expectedText) {
+	    for (WebElement msg : successMessages) {
+	        if (msg.getText().equalsIgnoreCase(expectedText)) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	
+	public boolean waitForSuccessMessage(String expectedText, int timeout) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+
+	    return wait.until(driver ->
+	        successMessages.stream()
+	            .anyMatch(msg -> msg.getText().trim().equalsIgnoreCase(expectedText))
+	    );
+	}
+
+
 
 }

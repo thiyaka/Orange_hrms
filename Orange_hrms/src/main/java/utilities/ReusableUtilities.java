@@ -28,7 +28,8 @@ public class ReusableUtilities {
 
 	public static WebElement waitForElementVisiblity(WebDriver driver, WebElement element, int timeout) {
 
-		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		// WebDriverWait wait = new WebDriverWait(driver,
+		// Duration.ofSeconds(timeoutInSeconds));
 		WebDriverWait wait = waitinitializationCustomTimer(driver, timeout);
 		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -74,16 +75,20 @@ public class ReusableUtilities {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait;
 	}
-	
+
 	public static WebDriverWait waitinitializationCustomTimer(WebDriver driver, int timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait;
 	}
-	
+
 	public static void selectFromCustomDropdown(WebElement dropdown, String value, WebDriver driver) {
-	    dropdown.click();
-	    driver.findElement(By.xpath("//span[text()='" + value + "']")).click();
+		dropdown.click();
+		driver.findElement(By.xpath("//span[text()='" + value + "']")).click();
 	}
 
+	public static WebElement waitForElementPresence(WebDriver driver, By locator, int timeout) {
+		WebDriverWait wait = waitinitializationCustomTimer(driver, timeout);
+		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
 
 }
