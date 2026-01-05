@@ -3,6 +3,7 @@ package utilities;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,14 @@ public class ReusableUtilities {
 		// Duration.ofSeconds(timeoutInSeconds));
 		WebDriverWait wait = waitinitializationCustomTimer(driver, timeout);
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public static WebElement waitForElementToBeClickable(WebDriver driver, By locator, int timeout) {
+
+		// WebDriverWait wait = new WebDriverWait(driver,
+		// Duration.ofSeconds(timeoutInSeconds));
+		WebDriverWait wait = waitinitializationCustomTimer(driver, timeout);
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
 	public static WebElement waitForElementVisiblity(WebDriver driver, WebElement element, int timeout) {
@@ -65,7 +74,7 @@ public class ReusableUtilities {
 
 	public static Boolean waitForFormToLoad(WebDriver driver, WebElement formLoader) {
 		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebDriverWait wait = waitinitializationDefaultTimer(driver);
+		WebDriverWait wait = waitinitializationCustomTimer(driver,30);
 		return wait.until(ExpectedConditions.invisibilityOf(formLoader));
 	}
 
@@ -77,7 +86,7 @@ public class ReusableUtilities {
 	}
 
 	public static WebDriverWait waitinitializationCustomTimer(WebDriver driver, int timeout) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
 		return wait;
 	}
 
@@ -90,5 +99,22 @@ public class ReusableUtilities {
 		WebDriverWait wait = waitinitializationCustomTimer(driver, timeout);
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
+	
+	public static void setDateUsingJS(WebDriver driver, WebElement element, String date) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	    js.executeScript(
+	        "arguments[0].removeAttribute('readonly'); arguments[0].value = arguments[1];",
+	        element,
+	        date
+	    );
+
+	    // Trigger change event
+	    js.executeScript(
+	        "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+	        element
+	    );
+	}
+
 
 }
