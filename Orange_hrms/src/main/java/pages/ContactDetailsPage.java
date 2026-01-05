@@ -138,19 +138,20 @@ public class ContactDetailsPage extends BasePage {
 		saveBtn.click();
 	}
 
-	public boolean isSuccessMessageDisplayed() {
-
-		ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
-
-		return successMessageText.getText().equalsIgnoreCase("Successfully Updated");
-	}
-	
-	public boolean isSuccessMessageDisplayed1() {
-
-		ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
-
-		return successMessageText.getText().equalsIgnoreCase("Successfully Saved");
-	}
+	/*
+	 * public boolean isSuccessMessageDisplayed() {
+	 * 
+	 * ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
+	 * 
+	 * return successMessageText.getText().equalsIgnoreCase("Successfully Updated");
+	 * }
+	 * 
+	 * public boolean isSuccessMessageDisplayed1() {
+	 * 
+	 * ReusableUtilities.waitForSuccessmsg(driver, successToast, 10);
+	 * 
+	 * return successMessageText.getText().equalsIgnoreCase("Successfully Saved"); }
+	 */
 
 	public void selectCountry(String country) {
 
